@@ -1,0 +1,15 @@
+body {
+    background-color: grey ;
+  }
+.back1 {
+    color: blue;
+}
+#imgBox {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#imgBox img {
+    width: 25%;
+    min-width: 100px;
+}
