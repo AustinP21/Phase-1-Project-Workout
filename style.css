@@ -13,3 +13,10 @@ body {
     width: 25%;
     min-width: 100px;
 }
+.mainTitle {
+    text-align:center;
+}
+
+.workoutSection {
+    text-align: center;
+}
