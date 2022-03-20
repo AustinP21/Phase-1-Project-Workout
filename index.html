@@ -7,7 +7,7 @@
     <title>Full Body Workout</title>
 </head>
 <body>
-<script src="index.js"></script>
+<script defer src="index.js"></script>
 <link rel="stylesheet" href="style.css">
 
 <div class= "back1" id= "background">
@@ -15,20 +15,35 @@
     <div id="titleSection">
         <h1 class="mainTitle">Full Body Excersise </h1>
     </div>
-   
+   <div id="workoutDescribe">     
+        <div id = body1>Lower & Upper Arms</div>
+        <div id = body2>Lower and Upper Legs</div>
+        <div id = body3>Chest</div>
+        <div id = body4>Back</div>
+   </div>
     <div id= "imgBox">
-        <img src="https://www.researchgate.net/profile/Michiel-Holtkamp/publication/41884685/figure/fig1/AS:340885289095168@1458284794162/Overview-of-muscles-in-the-human-arm-back-front-view.png" alt="arms">
-        <img src="https://www.mightyfighter.com/wp-content/uploads/2013/02/leg-muscles-front-back.jpg" alt="legs">
-        <img src="https://manofmany.com/wp-content/uploads/2019/03/10-Best-Chest-Exercises-for-Men-pecs-diagram.jpg" alt="chest">
-        <img src="https://static.greatbigcanvas.com/images/singlecanvas_thick_none/jrl-group/muscles-of-the-back-posterior-view,2279907.jpg" alt="shoulders">
+        <img id= "img1" src="https://www.researchgate.net/profile/Michiel-Holtkamp/publication/41884685/figure/fig1/AS:340885289095168@1458284794162/Overview-of-muscles-in-the-human-arm-back-front-view.png" width= '100' alt="arms">
+        <img id= "img2" src="https://www.mightyfighter.com/wp-content/uploads/2013/02/leg-muscles-front-back.jpg" width= '100' alt="legs">
+        <img id= "img3" src="https://manofmany.com/wp-content/uploads/2019/03/10-Best-Chest-Exercises-for-Men-pecs-diagram.jpg" width= '100' alt="chest">
+        <img id= "img4" src="https://static.greatbigcanvas.com/images/singlecanvas_thick_none/jrl-group/muscles-of-the-back-posterior-view,2279907.jpg" width= '100' alt="shoulders">
     </div>      
-    <form class= "search1" id= "searchBar">
-        <input type="text" placeholder="Search.."/>
-        <input type="submit" value="search"/>
-    </form>
-       
+    <div>
+        <select id="bodyPart-dropdown" name="body">
+          <option selected disabled>Select Body Part</option>
+          <option value="Upper Legs">Upper legs</option>
+          <option value="Lower Legs">Lower Legs</option>
+          <option value="Upper Arms">Upper Arms</option>
+          <option value="Lower Arms">Lower Arms</option>
+          <option value="Chest">Chest</option>
+          <option value="Back">Back</option>
+        </select>
+        <br>
+        <br>
+        <button id="submit">Workouts</button>
+    </div>
     <div id= "workouts">
         <h2 class="workoutSection">Workouts!</h2>
+        <ul id= workoutList></ul>
     </div> 
 </div>
 </body>

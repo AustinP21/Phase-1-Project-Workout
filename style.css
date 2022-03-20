@@ -1,3 +1,8 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 body {
     background-color: grey ;
   }
@@ -20,7 +25,25 @@ body {
 .workoutSection {
     text-align: center;
 }
-.search1 {
+#bodyPart-dropdown, #submit {
     margin-left: 43%;
     margin-right: 40%;
+}
+#workoutDescribe {
+    display: block;
+    flex-wrap: wrap;
+}
+#body1 {
+    margin-left: 15%;
+    margin-right: 85%;
+}
+#body2 {
+    margin-left: 35%;
+    margin-right: 65%;
+}#body3 {
+    margin-left: 65%;
+    margin-right: 35%;
+}#body4 {
+    margin-left: 85%;
+    margin-right: 15%;
 }
