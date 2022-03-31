@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 body {
-    background-color: grey ;
+    background-color: grey;
   }
 .back1 {
     color: blue;
@@ -29,21 +29,29 @@ body {
     margin-left: 43%;
     margin-right: 40%;
 }
-#workoutDescribe {
-    display: block;
-    flex-wrap: wrap;
+#workoutDescribe div{
+    display: inline-flex;
 }
 #body1 {
     margin-left: 15%;
     margin-right: 85%;
+    width: 15%;
 }
 #body2 {
     margin-left: 35%;
     margin-right: 65%;
+    width: 15%;
 }#body3 {
     margin-left: 65%;
     margin-right: 35%;
+    width: 15%;
 }#body4 {
     margin-left: 85%;
     margin-right: 15%;
+    width: 15%;
 }
+#imgBox img.resize {
+    width: 35%;
+    min-width: 100px;
+}
+/*take out margins change add width make inline/*

@@ -1,17 +1,22 @@
 //DOMContentLoaded on page load
+//import {API_KEY} from './config'
+const image1 = document.getElementById('img1')
+const image2 = document.getElementById('img2')
+const image3 = document.getElementById('img3')
+const image4 = document.getElementById('img4')
+
 window.addEventListener('DOMContentLoaded', () => {
     console.log('DOM fully loaded and parsed')
+    getWorkouts()
+    addEventListeners()
 });
-getWorkouts()
-addEventListeners()
 
 //Fetching the API
-let exercises
+let exercises = []
 
 function getWorkouts() {
   const url = "https://exercisedb.p.rapidapi.com/exercises"
 	fetch(url, {
-        "method": "GET",
         "headers": {
             "x-rapidapi-host": "exercisedb.p.rapidapi.com",
             "x-rapidapi-key": "3dea8b2111msh4b6e81c8cbe1d41p1b3bffjsn3e1a1aa2c720"
@@ -26,7 +31,7 @@ function getWorkouts() {
 		})
 }
 
-//Drop down to select body part submit, create array.
+//Drop down to select body part, submit, array
 function addEventListeners() {
   const bodyDrop = document.getElementById('submit')
 
@@ -34,51 +39,62 @@ function addEventListeners() {
       const body = document.getElementById('bodyPart-dropdown')
       const selectedPart = [body].map(option => option.value)
       console.log(selectedPart)
-      renderParts(selectedPart) 
+      renderParts(selectedPart)
   })
+  //foreach mouseover mouseleave for imgs
+  document.querySelectorAll('#imgBox img').forEach(el => {
+      el.addEventListener('mouseover', (e) => {
+        e.target.classList.add('resize')
+      })
+      el.addEventListener('mouseleave', (e) => {
+        e.target.classList.remove('resize')
+      })
+  });
 }
 //render the body parts add like functionality
 const EMPTY_HEART = '♡'
 const FULL_HEART = '♥'
 
 function renderParts(selectedPart) {
-  console.log("WORKOUT")
-    const workoutDiv = document.getElementById('workouts')
-    workoutDiv.innerHTML = ' '
-    console.log(selectedPart)
-    let filteredParks = parks.data.filter(el => {
-            return el.states.includes(selectedPart)
-        }
-    )
-    console.log(filteredParks)
-
-    for (let i = 0; i < filteredParks.length; i++) {
-            const ul = document.createElement('ul')
-            const img = document.createElement('img')
-            const descrip = document.createElement('p')
-            const directions = document.createElement('a')
-            const liker = document.createElement('button')
-            liker.textContent = EMPTY_HEART
-            directions.innerText = 'Get Directions'
-            directions.href = filteredParks[i].directionsUrl
-            directions.target = '_blank'
-            img.src = filteredParks[i].images[0].url
-            ul.innerText = filteredParks[i].fullName
-            descrip.innerText = filteredParks[i].description
-            workoutDiv.append(img, ul, descrip, directions, liker) 
-            liker.addEventListener('click', likePark)
-            }
-        }  
+    console.log("WORKOUT")
+      const workoutDiv = document.getElementById('workouts')    
+      workoutDiv.innerHTML = ' '
+      console.log(selectedPart)
+      let fullExercises = exercises.filter(el => {
+              return el.bodyPart.includes(selectedPart)
+          }
+      )
+      console.log(fullExercises)
   
-
-  const likePark = (e) => {
-    const liker = e.target
-    const like = liker.textContent
-    if(like===EMPTY_HEART) {
-      liker.textContent = FULL_HEART
-    } else {
-      liker.textContent = EMPTY_HEART
+      for (let i = 0; i < fullExercises.length; i++) {
+              const ul = document.createElement('ul')
+              const equip = document.createElement('p')
+              const identify = document.createElement('p')
+              const description = document.createElement('p')
+              const gifs = document.createElement('img')
+              const liker = document.createElement('button')
+              liker.textContent = EMPTY_HEART
+              ul.innerText = fullExercises[i].bodyPart
+              equip.innerText = fullExercises[i].equipment
+              identify.innerText = fullExercises[i].id
+              gifs.src = fullExercises[i].gifUrl 
+              description.innerText = fullExercises[i].name
+              workoutDiv.append(ul, description, liker, identify, equip, gifs) 
+              liker.addEventListener('click', likeWorkout)
+              }
+          }  
+    
+  
+    const likeWorkout = (e) => {
+      const liker = e.target
+      const like = liker.textContent
+      if(like===EMPTY_HEART) {
+        liker.textContent = FULL_HEART
+      } else {
+        liker.textContent = EMPTY_HEART
+      }
     }
-  }
-// mouseOver
-// mouseLeave
+
+
+    //ul.innerText = fullExercises[i].fullBody
+    //description.innerText = fullExercises[i].description
