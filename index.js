@@ -1,5 +1,6 @@
 //DOMContentLoaded on page load
-//import {API_KEY} from './config'
+//import {API_KEY} from "./config.js"
+//console.log(API_KEY)
 const image1 = document.getElementById('img1')
 const image2 = document.getElementById('img2')
 const image3 = document.getElementById('img3')
@@ -34,7 +35,6 @@ function getWorkouts() {
 //Drop down to select body part, submit, array
 function addEventListeners() {
   const bodyDrop = document.getElementById('submit')
-
   bodyDrop.addEventListener('click', () => {
       const body = document.getElementById('bodyPart-dropdown')
       const selectedPart = [body].map(option => option.value)
@@ -50,7 +50,7 @@ function addEventListeners() {
         e.target.classList.remove('resize')
       })
   });
-}
+} 
 //render the body parts add like functionality
 const EMPTY_HEART = '♡'
 const FULL_HEART = '♥'
