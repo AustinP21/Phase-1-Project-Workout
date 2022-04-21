@@ -69,17 +69,17 @@ function renderParts(selectedPart) {
       for (let i = 0; i < fullExercises.length; i++) {
               const ul = document.createElement('ul')
               const equip = document.createElement('p')
-              const identify = document.createElement('p')
+              //const identify = document.createElement('p')
               const description = document.createElement('p')
               const gifs = document.createElement('img')
               const liker = document.createElement('button')
               liker.textContent = EMPTY_HEART
               ul.innerText = fullExercises[i].bodyPart
               equip.innerText = fullExercises[i].equipment
-              identify.innerText = fullExercises[i].id
+              //identify.innerText = fullExercises[i].id
               gifs.src = fullExercises[i].gifUrl 
               description.innerText = fullExercises[i].name
-              workoutDiv.append(ul, description, liker, identify, equip, gifs) 
+              workoutDiv.append(ul, description, liker, /*identify,*/ equip, gifs) 
               liker.addEventListener('click', likeWorkout)
               }
           }  
