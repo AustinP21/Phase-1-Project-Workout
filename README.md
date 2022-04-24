@@ -11,13 +11,13 @@ The app allows for the individual to favorite and unfavorite workouts, see a gif
 
 ## Details
 
-The entire app is one HTML page
-CSS used for styling
-JavaScript used for functionality 
-A dropdown menu is used to selct body parts
-A like or favorite button is used
-Hovering the mouse over the photos allows them to change to a larger size and removing the mouse from them allows them to return to normal
-API is loaded on page refresh
+1. The entire app is one HTML page
+2. CSS used for styling
+3. JavaScript used for functionality 
+4. A dropdown menu is used to selct body parts
+5. A like or favorite button is used
+6. Hovering the mouse over the photos allows them to change to a larger size and removing the mouse from them allows them to return to normal
+7. API is loaded on page refresh
 
 
 ## References 
