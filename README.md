@@ -1,7 +1,8 @@
 # Phase-1-Project-Workout
 Flatiron school phase1 project, workout app
 
-![Uploading Screen Shot 2022-04-27 at 3.09.42 PM.png…]()
+<img width="1192" alt="Screen Shot 2022-04-27 at 3 09 42 PM" src="https://user-images.githubusercontent.com/97205000/165623845-41728dad-5c5f-4c1e-9c1e-63e33b0a869e.png">
+
 
 ## Push and Pulley
 
@@ -26,12 +27,12 @@ The app allows for the individual to favorite and unfavorite workouts, see a gif
 The API used for the project: https://www.programmableweb.com/api/exercisedb-rest-api-v10
 For formtting and code help: https://developer.mozilla.org/en-US/
 
-##Contributing
+## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 Please make sure to update tests as appropriate.
 
-##License
+## License
 MIT License
 
 Copyright (c) 2022 Austin Pulley
